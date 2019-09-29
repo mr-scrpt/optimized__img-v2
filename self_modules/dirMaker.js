@@ -9,19 +9,21 @@ const dirMaker = async (target, base) => {
 
   return new Promise((resolve, reject) => {
     const baseDir = new Promise(( async (resolve, reject) => {
-      if(existBase){
-        //fs.mkdir(base, err => err ? reject(err) : resolve())
-        await mkdir(base);
+      try{
+        existBase && await mkdir(base);
+        resolve()
+      }catch (err) {
+        reject(err)
       }
-      resolve()
     }));
 
     const targetDir = new Promise(( async (resolve, reject) => {
-      if(existTarget){
-        //fs.mkdir(target, err => err ? reject(err) : resolve())
-        await mkdir(target);
+      try {
+        existTarget && await mkdir(target);
+        resolve()
+      }catch (err) {
+        reject(err)
       }
-      resolve()
     }));
 
     Promise.all([baseDir, targetDir])
