@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "archiver": "^3.1.1",
+    "commander": "^3.0.2",
+    "gm": "^1.23.1",
+    "gunzip-stream": "^1.0.1",
+    "jimp": "^0.8.4",
+    "zlib": "^1.0.5"
+  }
+}
